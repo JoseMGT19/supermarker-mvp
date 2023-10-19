@@ -22,7 +22,7 @@ namespace Supermarket_mvp.Views
             AssociateAndRaiseViewEvents();
 
 
-            tabControl1.TabPages.Remove(tabPage2);//Pay mode detail 
+            tabControl1.TabPages.Remove(tabPagePayModeDetail);//Pay mode detail 
         }
 
         private void AssociateAndRaiseViewEvents()
