@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
+using Supermarket_mvp._Repositories;
+using Supermarket_mvp.Models;
+using Supermarket_mvp.Presenters;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -22,7 +26,7 @@ namespace Supermarket_mvp.Views
             AssociateAndRaiseViewEvents();
 
 
-            tabControl1.TabPages.Remove(tabPagePayModeDetail);//Pay mode detail 
+            tabControl2.TabPages.Remove(tabPagePayModeDetail);
         }
 
         private void AssociateAndRaiseViewEvents()
@@ -85,6 +89,25 @@ namespace Supermarket_mvp.Views
         {
             DgPayMode.DataSource = payModeList;
         }
+
+        private static PayModeView instance;
+        public static PayModeView GetInstance()
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new PayModeView();
+            }
+            else
+            {
+                if (instance.WindowState == FormWindowState.Minimized)
+                {
+                    instance.WindowState = FormWindowState.Normal;
+                }
+                instance.BringToFront();
+            }
+            return instance;
+        }
+       
 
 
     }
