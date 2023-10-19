@@ -41,6 +41,40 @@ namespace Supermarket_mvp.Views
                     SearchEvent?.Invoke(this, EventArgs.Empty);
                 }
             };
+            //Agregar, llame el evento AddNewEvent Cuando se haga clic en el boton BtnNew
+            BtnNew.Click += delegate { AddNewEvent?.Invoke(this, EventArgs.Empty);
+                tabControl2.TabPages.Remove(tabPayModeList);
+                tabControl2.TabPages.Add(tabPagePayModeDetail);
+                tabPagePayModeDetail.Text = "Edit Pay Mode";
+            };
+
+
+            BtnEdit.Click += delegate { EditEvent?.Invoke(this, EventArgs.Empty); };
+            BtnDelete.Click += delegate {
+                var result = MessageBox.Show(
+                    "Are you sure ou want to delete the selected Pay Mode",
+                    "Warning",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    DeleteEvent?.Invoke(this, EventArgs.Empty);
+                    MessageBox.Show(Message);
+                }
+                
+            };
+
+            BtnSave.Click += delegate { SaveEvent?.Invoke(this, EventArgs.Empty);
+                if(isSuccessful)
+                {
+                    tabControl2.TabPages.Remove(tabPagePayModeDetail);
+                    tabControl2.TabPages.Add(tabPayModeList);
+                }
+                MessageBox.Show(Message);
+            };
+            BtnCancel.Click += delegate { CancelEvent?.Invoke(this, EventArgs.Empty);
+                tabControl2.TabPages.Remove(tabPagePayModeDetail);
+                tabControl2.TabPages.Add(tabPayModeList);
+            };
         }
 
         public string PayModeId
