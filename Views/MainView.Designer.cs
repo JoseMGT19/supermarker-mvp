@@ -31,9 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainView));
             panel1 = new Panel();
             BtnExit = new Button();
+            BtnProduct = new Button();
             BtnPayMode = new Button();
             pictureBox1 = new PictureBox();
-            BtnProduct = new Button();
+            BtnProvider = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -41,6 +42,7 @@
             // panel1
             // 
             panel1.Controls.Add(BtnExit);
+            panel1.Controls.Add(BtnProvider);
             panel1.Controls.Add(BtnProduct);
             panel1.Controls.Add(BtnPayMode);
             panel1.Controls.Add(pictureBox1);
@@ -60,6 +62,16 @@
             BtnExit.Size = new Size(200, 83);
             BtnExit.TabIndex = 2;
             BtnExit.UseVisualStyleBackColor = true;
+            // 
+            // BtnProduct
+            // 
+            BtnProduct.BackgroundImage = Properties.Resources.products;
+            BtnProduct.BackgroundImageLayout = ImageLayout.Zoom;
+            BtnProduct.Location = new Point(0, 138);
+            BtnProduct.Name = "BtnProduct";
+            BtnProduct.Size = new Size(197, 66);
+            BtnProduct.TabIndex = 1;
+            BtnProduct.UseVisualStyleBackColor = true;
             // 
             // BtnPayMode
             // 
@@ -82,15 +94,15 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // BtnProduct
+            // BtnProvider
             // 
-            BtnProduct.BackgroundImage = Properties.Resources.products;
-            BtnProduct.BackgroundImageLayout = ImageLayout.Zoom;
-            BtnProduct.Location = new Point(0, 138);
-            BtnProduct.Name = "BtnProduct";
-            BtnProduct.Size = new Size(197, 66);
-            BtnProduct.TabIndex = 1;
-            BtnProduct.UseVisualStyleBackColor = true;
+            BtnProvider.BackgroundImage = Properties.Resources.providers1;
+            BtnProvider.BackgroundImageLayout = ImageLayout.Zoom;
+            BtnProvider.Location = new Point(0, 210);
+            BtnProvider.Name = "BtnProvider";
+            BtnProvider.Size = new Size(197, 66);
+            BtnProvider.TabIndex = 1;
+            BtnProvider.UseVisualStyleBackColor = true;
             // 
             // MainView
             // 
@@ -114,5 +126,6 @@
         private Button BtnPayMode;
         private Button BtnExit;
         private Button BtnProduct;
+        private Button BtnProvider;
     }
 }

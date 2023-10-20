@@ -25,4 +25,4 @@ namespace Supermarket_mvp.Models
     }
 
 }
-}
+

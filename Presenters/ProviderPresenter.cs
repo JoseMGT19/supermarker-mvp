@@ -15,7 +15,7 @@ namespace Supermarket_mvp.Presenters
         private BindingSource providerBindingSource;
         private IEnumerable<ProvidersModel> providerList;
 
-        public ProviderPresenter(IProviderView view, IProviderRepository repository, BindingSource providerBindingSource, IEnumerable<ProvidersModel> providerList)
+        public ProviderPresenter(IProviderView view, IProviderRepository repository)
         {
             this.providerBindingSource = new BindingSource();
             this.view = view;

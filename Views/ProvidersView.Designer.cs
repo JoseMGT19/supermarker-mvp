@@ -90,9 +90,9 @@
             // 
             // tabControl1
             // 
+            tabControl1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             tabControl1.Controls.Add(tabProvidersList);
             tabControl1.Controls.Add(tabProviderDetail);
-            tabControl1.Dock = DockStyle.Fill;
             tabControl1.Location = new Point(0, 100);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
@@ -119,6 +119,7 @@
             // 
             // BtnClose
             // 
+            BtnClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnClose.Image = Properties.Resources.cerrar;
             BtnClose.Location = new Point(615, 264);
             BtnClose.Name = "BtnClose";
@@ -128,6 +129,7 @@
             // 
             // BtnDelete
             // 
+            BtnDelete.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnDelete.Image = Properties.Resources.delete;
             BtnDelete.Location = new Point(615, 200);
             BtnDelete.Name = "BtnDelete";
@@ -137,6 +139,7 @@
             // 
             // BtnEdit
             // 
+            BtnEdit.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnEdit.Image = Properties.Resources.edit;
             BtnEdit.Location = new Point(615, 136);
             BtnEdit.Name = "BtnEdit";
@@ -146,6 +149,7 @@
             // 
             // BtnNew
             // 
+            BtnNew.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnNew.BackColor = Color.Transparent;
             BtnNew.Image = Properties.Resources._new;
             BtnNew.Location = new Point(615, 70);
@@ -156,6 +160,7 @@
             // 
             // DgProvider
             // 
+            DgProvider.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             DgProvider.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DgProvider.Location = new Point(15, 70);
             DgProvider.Name = "DgProvider";
@@ -165,6 +170,7 @@
             // 
             // BtnSearchP
             // 
+            BtnSearchP.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnSearchP.BackgroundImageLayout = ImageLayout.Zoom;
             BtnSearchP.Image = Properties.Resources.search_small;
             BtnSearchP.Location = new Point(559, 18);
@@ -175,6 +181,7 @@
             // 
             // TxtSearch
             // 
+            TxtSearch.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             TxtSearch.Location = new Point(15, 32);
             TxtSearch.Name = "TxtSearch";
             TxtSearch.PlaceholderText = "Data to search";

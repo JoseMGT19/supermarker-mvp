@@ -45,9 +45,9 @@ namespace Supermarket_mvp._Repositories
                     while (reader.Read())
                     {
                         var providerModel = new ProvidersModel();
-                        providerModel.Id = (int)reader["Products_Id"];
-                        providerModel.Name = reader["Products_Name"].ToString();
-                        providerModel.Observation = reader["Products_Observation"].ToString();
+                        providerModel.Id = (int)reader["Providers_Id"];
+                        providerModel.Name = reader["Providers_Name"].ToString();
+                        providerModel.Observation = reader["Providers_Observation"].ToString();
                         providerList.Add(providerModel);
 
                     }
@@ -73,11 +73,11 @@ namespace Supermarket_mvp._Repositories
                 {
                     while (reader.Read())
                     {
-                        var productModel = new ProductModel();
-                        productModel.Id = (int)reader["Products_Id"];
-                        productModel.Name = reader["Products_Name"].ToString();
-                        productModel.Observation = reader["Produts_Observation"].ToString();
-                        providerList.Add(productModel);
+                        var providerModel = new ProvidersModel();
+                        providerModel.Id = (int)reader["Providers_Id"];
+                        providerModel.Name = reader["Providers_Name"].ToString();
+                        providerModel.Observation = reader["Providers_Observation"].ToString();
+                        providerList.Add(providerModel);
 
                     }
                 }
