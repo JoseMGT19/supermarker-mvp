@@ -31,15 +31,15 @@
             panel1 = new Panel();
             label1 = new Label();
             pictureBox1 = new PictureBox();
-            tabControl1 = new TabControl();
+            tabProducts = new TabControl();
             tabProductsList = new TabPage();
-            BtnClose = new Button();
-            BtnDelete = new Button();
-            BtnEdit = new Button();
-            BtnNew = new Button();
+            BtnClosed = new Button();
+            BtnDeleteP = new Button();
+            BtnEditP = new Button();
+            BtnNewP = new Button();
             DgProduct = new DataGridView();
             BtnSearchP = new Button();
-            TxtSearchs = new TextBox();
+            TxtSearchS = new TextBox();
             lbSearch = new Label();
             tabProductsDetail = new TabPage();
             BtnCancel = new Button();
@@ -52,7 +52,7 @@
             lblProduct = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            tabControl1.SuspendLayout();
+            tabProducts.SuspendLayout();
             tabProductsList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DgProduct).BeginInit();
             tabProductsDetail.SuspendLayout();
@@ -88,26 +88,26 @@
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
             // 
-            // tabControl1
+            // tabProducts
             // 
-            tabControl1.Controls.Add(tabProductsList);
-            tabControl1.Controls.Add(tabProductsDetail);
-            tabControl1.Dock = DockStyle.Fill;
-            tabControl1.Location = new Point(0, 100);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(800, 350);
-            tabControl1.TabIndex = 3;
+            tabProducts.Controls.Add(tabProductsList);
+            tabProducts.Controls.Add(tabProductsDetail);
+            tabProducts.Dock = DockStyle.Fill;
+            tabProducts.Location = new Point(0, 100);
+            tabProducts.Name = "tabProducts";
+            tabProducts.SelectedIndex = 0;
+            tabProducts.Size = new Size(800, 350);
+            tabProducts.TabIndex = 3;
             // 
             // tabProductsList
             // 
-            tabProductsList.Controls.Add(BtnClose);
-            tabProductsList.Controls.Add(BtnDelete);
-            tabProductsList.Controls.Add(BtnEdit);
-            tabProductsList.Controls.Add(BtnNew);
+            tabProductsList.Controls.Add(BtnClosed);
+            tabProductsList.Controls.Add(BtnDeleteP);
+            tabProductsList.Controls.Add(BtnEditP);
+            tabProductsList.Controls.Add(BtnNewP);
             tabProductsList.Controls.Add(DgProduct);
             tabProductsList.Controls.Add(BtnSearchP);
-            tabProductsList.Controls.Add(TxtSearchs);
+            tabProductsList.Controls.Add(TxtSearchS);
             tabProductsList.Controls.Add(lbSearch);
             tabProductsList.Location = new Point(4, 24);
             tabProductsList.Name = "tabProductsList";
@@ -117,46 +117,46 @@
             tabProductsList.Text = "Products List";
             tabProductsList.UseVisualStyleBackColor = true;
             // 
-            // BtnClose
+            // BtnClosed
             // 
-            BtnClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            BtnClose.Image = Properties.Resources.cerrar;
-            BtnClose.Location = new Point(622, 267);
-            BtnClose.Name = "BtnClose";
-            BtnClose.Size = new Size(162, 47);
-            BtnClose.TabIndex = 4;
-            BtnClose.UseVisualStyleBackColor = true;
+            BtnClosed.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            BtnClosed.Image = Properties.Resources.cerrar;
+            BtnClosed.Location = new Point(622, 267);
+            BtnClosed.Name = "BtnClosed";
+            BtnClosed.Size = new Size(162, 47);
+            BtnClosed.TabIndex = 4;
+            BtnClosed.UseVisualStyleBackColor = true;
             // 
-            // BtnDelete
+            // BtnDeleteP
             // 
-            BtnDelete.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            BtnDelete.Image = Properties.Resources.delete;
-            BtnDelete.Location = new Point(622, 203);
-            BtnDelete.Name = "BtnDelete";
-            BtnDelete.Size = new Size(162, 47);
-            BtnDelete.TabIndex = 4;
-            BtnDelete.UseVisualStyleBackColor = true;
+            BtnDeleteP.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            BtnDeleteP.Image = Properties.Resources.delete;
+            BtnDeleteP.Location = new Point(622, 203);
+            BtnDeleteP.Name = "BtnDeleteP";
+            BtnDeleteP.Size = new Size(162, 47);
+            BtnDeleteP.TabIndex = 4;
+            BtnDeleteP.UseVisualStyleBackColor = true;
             // 
-            // BtnEdit
+            // BtnEditP
             // 
-            BtnEdit.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            BtnEdit.Image = Properties.Resources.edit;
-            BtnEdit.Location = new Point(622, 139);
-            BtnEdit.Name = "BtnEdit";
-            BtnEdit.Size = new Size(162, 47);
-            BtnEdit.TabIndex = 4;
-            BtnEdit.UseVisualStyleBackColor = true;
+            BtnEditP.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            BtnEditP.Image = Properties.Resources.edit;
+            BtnEditP.Location = new Point(622, 139);
+            BtnEditP.Name = "BtnEditP";
+            BtnEditP.Size = new Size(162, 47);
+            BtnEditP.TabIndex = 4;
+            BtnEditP.UseVisualStyleBackColor = true;
             // 
-            // BtnNew
+            // BtnNewP
             // 
-            BtnNew.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            BtnNew.BackColor = Color.Transparent;
-            BtnNew.Image = Properties.Resources._new;
-            BtnNew.Location = new Point(622, 73);
-            BtnNew.Name = "BtnNew";
-            BtnNew.Size = new Size(162, 47);
-            BtnNew.TabIndex = 4;
-            BtnNew.UseVisualStyleBackColor = false;
+            BtnNewP.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            BtnNewP.BackColor = Color.Transparent;
+            BtnNewP.Image = Properties.Resources._new;
+            BtnNewP.Location = new Point(622, 73);
+            BtnNewP.Name = "BtnNewP";
+            BtnNewP.Size = new Size(162, 47);
+            BtnNewP.TabIndex = 4;
+            BtnNewP.UseVisualStyleBackColor = false;
             // 
             // DgProduct
             // 
@@ -183,14 +183,14 @@
             BtnSearchP.TabIndex = 2;
             BtnSearchP.UseVisualStyleBackColor = true;
             // 
-            // TxtSearchs
+            // TxtSearchS
             // 
-            TxtSearchs.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            TxtSearchs.Location = new Point(22, 35);
-            TxtSearchs.Name = "TxtSearchs";
-            TxtSearchs.PlaceholderText = "Data to search";
-            TxtSearchs.Size = new Size(538, 23);
-            TxtSearchs.TabIndex = 1;
+            TxtSearchS.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            TxtSearchS.Location = new Point(22, 35);
+            TxtSearchS.Name = "TxtSearchS";
+            TxtSearchS.PlaceholderText = "Data to search";
+            TxtSearchS.Size = new Size(538, 23);
+            TxtSearchS.TabIndex = 1;
             // 
             // lbSearch
             // 
@@ -299,14 +299,14 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(tabControl1);
+            Controls.Add(tabProducts);
             Controls.Add(panel1);
             Name = "ProductView";
             Text = "ProductView";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            tabControl1.ResumeLayout(false);
+            tabProducts.ResumeLayout(false);
             tabProductsList.ResumeLayout(false);
             tabProductsList.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)DgProduct).EndInit();
@@ -320,15 +320,15 @@
         private Panel panel1;
         private Label label1;
         private PictureBox pictureBox1;
-        private TabControl tabControl1;
+        private TabControl tabProducts;
         private TabPage tabProductsList;
-        private Button BtnClose;
-        private Button BtnDelete;
-        private Button BtnEdit;
-        private Button BtnNew;
+        private Button BtnClosed;
+        private Button BtnDeleteP;
+        private Button BtnEditP;
+        private Button BtnNewP;
         private DataGridView DgProduct;
         private Button BtnSearchP;
-        private TextBox TxtSearchs;
+        private TextBox TxtSearchS;
         private Label lbSearch;
         private TabPage tabProductsDetail;
         private Button BtnCancel;

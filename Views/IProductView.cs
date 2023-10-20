@@ -12,10 +12,9 @@ namespace Supermarket_mvp.Views
         string ProductName { get; set; }
         string ProductObservation { get; set; }
         string SearchValue { get; set; }
+        bool IsEdit { get; set; }
         bool IsSuccessful { get; set; }
         string Message { get; set; }
-        bool IsEdit { get; set; }
-
         event EventHandler SearchEvent;
         event EventHandler AddNewEvent;
         event EventHandler EditEvent;
@@ -25,7 +24,7 @@ namespace Supermarket_mvp.Views
 
 
 
-        void SetPayModeListBildingSource(BindingSource productList);
+        void SetProductListBildingSource(BindingSource productList);
         void Show();
     }
 }

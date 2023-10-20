@@ -21,19 +21,19 @@ namespace Supermarket_mvp.Presenters
             this.view = view;
             this.repository = repository;
 
-            this.view.SearchEvent += SearchProduct;
-            this.view.AddNewEvent += AddNewProduct;
-            this.view.EditEvent += LoadSelectProductToEdit;
-            this.view.DeleteEvent += DelecteSelectedProduct;
-            this.view.SaveEvent += SaveProduct;
+            this.view.SearchEvent += SearchProvider;
+            this.view.AddNewEvent += AddNewProvider;
+            this.view.EditEvent += LoadSelectProviderToEdit;
+            this.view.DeleteEvent += DelecteSelectedProvider;
+            this.view.SaveEvent += SaveProvider;
             this.view.CancelEvent += CancelAction;
 
             this.view.SetProviderListBildingSource(providerBindingSource);
-            loadAllProductList();
+            loadAllProviderList();
             this.view.Show();
         }
 
-        private void loadAllProductList()
+        private void loadAllProviderList()
         {
             providerList = repository.GetAll();
             providerBindingSource.DataSource = providerList;
@@ -41,25 +41,84 @@ namespace Supermarket_mvp.Presenters
 
         private void CancelAction(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            CleanViewFields();
         }
 
-        private void SaveProduct(object? sender, EventArgs e)
+        private void SaveProvider(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
-        }
+            var provideMode = new ProvidersModel();
+            provideMode.Id = Convert.ToInt32(view.ProviderId);
+            provideMode.Name = view.ProviderName;
+            provideMode.Observation = view.ProviderObservation;
 
-        private void DelecteSelectedProduct(object? sender, EventArgs e)
+            try
+            {
+                new Common.ModelDataValidation().Validate(provideMode);
+                if (view.IsEdit)
+                {
+                    repository.Edit(provideMode);
+                    view.Message = "Provider edited successfuly";
+                }
+                else
+                {
+                    repository.Add(provideMode);
+                    view.Message = "Provider added successfuly";
+                }
+                view.IsSuccessful = true;
+                loadAllProviderList();
+                CleanViewFields();
+            }
+            catch (Exception ex)
+            {
+                view.IsSuccessful = false;
+                view.Message = ex.Message;
+            }
+        }
+        private void CleanViewFields()
         {
-            throw new NotImplementedException();
+            view.ProviderId = "0";
+            view.ProviderName = "";
+            view.ProviderObservation = "";
         }
 
-        private void LoadSelectProductToEdit(object? sender, EventArgs e)
+        private void DelecteSelectedProvider(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var provideMode = (ProvidersModel)providerBindingSource.Current;
+
+                repository.Delete(provideMode.Id);
+                view.IsSuccessful = true;
+                view.Message = "Provider deleted successfully";
+                loadAllProviderList();
+            }
+            catch (Exception ex)
+            {
+                view.IsSuccessful = false;
+                view.Message = "Ah error ocurred, could not delete provider";
+            }
         }
 
-        private void SearchProduct(object? sender, EventArgs e)
+        private void LoadSelectProviderToEdit(object? sender, EventArgs e)
+        {
+            //Se obtiene el objeto del dtagridview que se encuentra seleccionado
+            var provideMode = (ProvidersModel)providerBindingSource.Current;
+            //Se cambia el contenido de las cajas de texto por el objeto recuperado 
+            // del datagrudview
+            view.ProviderId = provideMode.Id.ToString();
+            view.ProviderName = provideMode.Name;
+            view.ProviderObservation = provideMode.Observation;
+
+            //Se establece el modo como edicion
+            view.IsEdit = true;
+        }
+
+        private void AddNewProvider(object? sender, EventArgs e)
+        {
+            view.IsEdit = false;
+        }
+
+        private void SearchProvider(object? sender, EventArgs e)
         {
             bool emptyValue = string.IsNullOrWhiteSpace(this.view.SearchValue);
             if (emptyValue == false)
@@ -71,11 +130,6 @@ namespace Supermarket_mvp.Presenters
                 providerList = repository.GetAll();
             }
             providerBindingSource.DataSource = providerList;
-        }
-
-        private void AddNewProduct(object? sender, EventArgs e)
-        {
-            throw new NotImplementedException();
+            }
         }
     }
-}

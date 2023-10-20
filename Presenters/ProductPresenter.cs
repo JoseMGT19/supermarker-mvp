@@ -28,7 +28,7 @@ namespace Supermarket_mvp.Presenters
             this.view.SaveEvent += SaveProduct;
             this.view.CancelEvent += CancelAction;
 
-            this.view.SetPayModeListBildingSource(productBindingSource);
+            this.view.SetProductListBildingSource(productBindingSource);
             loadAllProductList();
             this.view.Show();
         }
@@ -46,23 +46,23 @@ namespace Supermarket_mvp.Presenters
 
         private void SaveProduct(object? sender, EventArgs e)
         {
-            var payMode = new ProductModel();
-            payMode.Id = Convert.ToInt32(view.ProductId);
-            payMode.Name = view.ProductName;
-            payMode.Observation = view.ProductObservation;
+            var productMode = new ProductModel();
+            productMode.Id = Convert.ToInt32(view.ProductId);
+            productMode.Name = view.ProductName;
+            productMode.Observation = view.ProductObservation;
 
             try
             {
-                new Common.ModelDataValidation().Validate(payMode);
+                new Common.ModelDataValidation().Validate(productMode);
                 if (view.IsEdit)
                 {
-                    repository.Edit(payMode);
+                    repository.Edit(productMode);
                     view.Message = "Product edited successfuly";
                 }
                 else
                 {
-                    repository.Add(payMode);
-                    view.Message = "Prroduct added successfuly";
+                    repository.Add(productMode);
+                    view.Message = "Product added successfuly";
                 }
                 view.IsSuccessful = true;
                 loadAllProductList();
@@ -85,9 +85,9 @@ namespace Supermarket_mvp.Presenters
         {
             try
             {
-                var payMode = (PayModeModel)productBindingSource.Current;
+                var productMode = (PayModeModel)productBindingSource.Current;
 
-                repository.Delete(payMode.Id);
+                repository.Delete(productMode.Id);
                 view.IsSuccessful = true;
                 view.Message = "Product deleted successfully";
                 loadAllProductList();
@@ -102,12 +102,12 @@ namespace Supermarket_mvp.Presenters
         private void LoadSelectProductToEdit(object? sender, EventArgs e)
         {
             //Se obtiene el objeto del dtagridview que se encuentra seleccionado
-            var payMode = (ProductModel)productBindingSource.Current;
+            var productMode = (ProductModel)productBindingSource.Current;
             //Se cambia el contenido de las cajas de texto por el objeto recuperado 
             // del datagrudview
-            view.ProductId = payMode.Id.ToString();
-            view.ProductName = payMode.Name;
-            view.ProductObservation = payMode.Observation;
+            view.ProductId = productMode.Id.ToString();
+            view.ProductName = productMode.Name;
+            view.ProductObservation = productMode.Observation;
 
             //Se establece el modo como edicion
             view.IsEdit = true;
