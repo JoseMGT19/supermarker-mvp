@@ -47,6 +47,25 @@ namespace Supermarket_mvp.Views
         {
             DgProduct.DataSource = productList;
         }
+        private static ProductView instance;
+
+        public static ProductView GetInstance(Form parantContainer)
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new ProductView();
+                instance.MdiParent = parantContainer;
+            }
+            else
+            {
+                if (instance.WindowState == FormWindowState.Minimized)
+                {
+                    instance.WindowState = FormWindowState.Normal;
+                }
+                instance.BringToFront();
+            }
+            return instance;
+        }
         public string ProductId
         {
             get { return TxtProductId.Text; }

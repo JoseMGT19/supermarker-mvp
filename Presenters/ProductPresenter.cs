@@ -40,7 +40,7 @@ namespace Supermarket_mvp.Presenters
 
         private void CancelAction(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            
         }
 
         private void SaveProduct(object? sender, EventArgs e)
