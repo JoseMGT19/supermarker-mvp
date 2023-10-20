@@ -119,6 +119,7 @@
             // 
             // BtnClose
             // 
+            BtnClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnClose.Image = Properties.Resources.cerrar;
             BtnClose.Location = new Point(622, 267);
             BtnClose.Name = "BtnClose";
@@ -128,6 +129,7 @@
             // 
             // BtnDelete
             // 
+            BtnDelete.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnDelete.Image = Properties.Resources.delete;
             BtnDelete.Location = new Point(622, 203);
             BtnDelete.Name = "BtnDelete";
@@ -137,6 +139,7 @@
             // 
             // BtnEdit
             // 
+            BtnEdit.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnEdit.Image = Properties.Resources.edit;
             BtnEdit.Location = new Point(622, 139);
             BtnEdit.Name = "BtnEdit";
@@ -146,6 +149,7 @@
             // 
             // BtnNew
             // 
+            BtnNew.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnNew.BackColor = Color.Transparent;
             BtnNew.Image = Properties.Resources._new;
             BtnNew.Location = new Point(622, 73);
@@ -156,15 +160,21 @@
             // 
             // DgProduct
             // 
+            DgProduct.AllowUserToAddRows = false;
+            DgProduct.AllowUserToDeleteRows = false;
+            DgProduct.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            DgProduct.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DgProduct.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DgProduct.Location = new Point(22, 73);
             DgProduct.Name = "DgProduct";
+            DgProduct.ReadOnly = true;
             DgProduct.RowTemplate.Height = 25;
             DgProduct.Size = new Size(594, 241);
             DgProduct.TabIndex = 3;
             // 
             // BtnSearchP
             // 
+            BtnSearchP.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnSearchP.BackgroundImageLayout = ImageLayout.Zoom;
             BtnSearchP.Image = Properties.Resources.search_small;
             BtnSearchP.Location = new Point(566, 21);
@@ -175,6 +185,7 @@
             // 
             // TxtSearchs
             // 
+            TxtSearchs.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             TxtSearchs.Location = new Point(22, 35);
             TxtSearchs.Name = "TxtSearchs";
             TxtSearchs.PlaceholderText = "Data to search";

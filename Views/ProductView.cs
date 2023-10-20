@@ -22,6 +22,7 @@ namespace Supermarket_mvp.Views
             AssociateAndRaiseViewEvents();
 
             tabControl1.TabPages.Remove(tabProductsDetail);
+            BtnClose.Click += delegate { this.Close(); };
         }
 
         private void AssociateAndRaiseViewEvents()
@@ -34,6 +35,48 @@ namespace Supermarket_mvp.Views
                     SearchEvent?.Invoke(this, EventArgs.Empty);
                 }
             };
+            BtnNew.Click += delegate { AddNewEvent?.Invoke(this, EventArgs.Empty); };
+            tabControl1.TabPages.Add(tabProductsDetail);
+            tabControl1.TabPages.Remove(tabProductsList);
+            tabProductsDetail.Text = "Add New Product";
+
+            BtnEdit.Click += delegate { EditEvent?.Invoke(this, EventArgs.Empty); };
+            tabControl1.TabPages.Remove(tabProductsList);
+            tabControl1.TabPages.Add(tabProductsDetail);
+            tabProductsDetail.Text = "Edit Product";  
+
+            BtnDelete.Click += delegate { var result = MessageBox.Show(
+                "Are you sure you want to delete the selected Product",
+                "Warning",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if(result == DialogResult.Yes)
+                {
+                    DeleteEvent?.Invoke(this, EventArgs.Empty);
+                    MessageBox.Show(Message);
+                }
+                
+            };
+
+            BtnSave.Click += delegate { SaveEvent?.Invoke(this, EventArgs.Empty);
+                if (isSuccessful)
+                {
+                    tabControl1.TabPages.Remove(tabProductsDetail);
+                    tabControl1.TabPages.Add(tabProductsList);
+                }
+                MessageBox.Show(Message);
+            };
+
+            BtnCancel.Click += delegate {
+                CancelEvent?.Invoke(this, EventArgs.Empty);
+                tabControl1.TabPages.Remove(tabProductsDetail);
+                tabControl1.TabPages.Add(tabProductsList);
+            };
+            
+        }
+
+        private void BtnNew_Click(object? sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         public event EventHandler SearchEvent;
@@ -49,12 +92,15 @@ namespace Supermarket_mvp.Views
         }
         private static ProductView instance;
 
-        public static ProductView GetInstance(Form parantContainer)
+        public static ProductView GetInstance(Form parentContainer)
         {
             if (instance == null || instance.IsDisposed)
             {
                 instance = new ProductView();
-                instance.MdiParent = parantContainer;
+                instance.MdiParent = parentContainer;
+
+                instance.FormBorderStyle = FormBorderStyle.None;
+                instance.Dock = DockStyle.Fill;
             }
             else
             {
@@ -102,9 +148,9 @@ namespace Supermarket_mvp.Views
             set { message = value; }
         }
 
-        
+
         string IProductView.ProductName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        
-        
+
+
     }
 }

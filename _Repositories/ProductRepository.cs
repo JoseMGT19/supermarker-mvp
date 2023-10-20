@@ -18,17 +18,50 @@ namespace Supermarket_mvp._Repositories
         }
         public void Add(ProductModel productModel)
         {
-            throw new NotImplementedException();
+            using (var connection = new SqlConnection(connectionString))
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "INSERT INTO Products VALUES(@name, @observation)";
+                command.Parameters.Add("@name", SqlDbType.NVarChar).Value = productModel.Name;
+                command.Parameters.Add("@observation", SqlDbType.NVarChar).Value = productModel.Observation;
+
+                command.ExecuteNonQuery();
+            }
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            using (var connection = new SqlConnection(connectionString))
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "DELETE FROM Products WHERE Products_Id = @id";
+                command.Parameters.Add("@id", SqlDbType.Int).Value = id;
+                command.ExecuteNonQuery();
+            }
         }
 
         public void Edit(ProductModel productModel)
         {
-            throw new NotImplementedException();
+            {
+                using (var connection = new SqlConnection(connectionString))
+                using (var command = new SqlCommand())
+                {
+                    connection.Open();
+                    command.Connection = connection;
+                    command.CommandText = @"UPDATE Products 
+                                            SET Products_Name = @name,
+                                            Products_Observation = @observation
+                                            WHERE Products_Id = @id";
+                    command.Parameters.Add("@name", SqlDbType.NVarChar).Value = productModel.Name;
+                    command.Parameters.Add("@observation", SqlDbType.NVarChar).Value = productModel.Observation;
+                    command.Parameters.Add("@id", SqlDbType.Int).Value = productModel.Id;
+                    command.ExecuteNonQuery();
+                }
+            }
         }
 
         public IEnumerable<ProductModel> GetAll()
@@ -47,7 +80,7 @@ namespace Supermarket_mvp._Repositories
                         var productModel = new ProductModel();
                         productModel.Id = (int)reader["Products_Id"];
                         productModel.Name = reader["Products_Name"].ToString();
-                        productModel.Observation = reader["Produts_Observation"].ToString();
+                        productModel.Observation = reader["Products_Observation"].ToString();
                         productList.Add(productModel);
 
                     }
@@ -57,7 +90,9 @@ namespace Supermarket_mvp._Repositories
         
         }
 
-        public IEnumerable<ProductModel> GetAll(string value)
+        
+
+        public IEnumerable<ProductModel> GetByValue(string value)
         {
             var productList = new List<ProductModel>();
             int productId = int.TryParse(value, out _) ? Convert.ToInt32(value) : 0;

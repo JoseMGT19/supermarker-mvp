@@ -17,6 +17,7 @@ namespace Supermarket_mvp.Presenters
 
         public ProductPresenter(IProductView view, IProductRepository repository)
         {
+            this.productBindingSource = new BindingSource();
             this.view = view;
             this.repository = repository;
 
@@ -40,27 +41,81 @@ namespace Supermarket_mvp.Presenters
 
         private void CancelAction(object? sender, EventArgs e)
         {
-            
+            CleanViewFields();
         }
 
         private void SaveProduct(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            var payMode = new ProductModel();
+            payMode.Id = Convert.ToInt32(view.ProductId);
+            payMode.Name = view.ProductName;
+            payMode.Observation = view.ProductObservation;
+
+            try
+            {
+                new Common.ModelDataValidation().Validate(payMode);
+                if (view.IsEdit)
+                {
+                    repository.Edit(payMode);
+                    view.Message = "Product edited successfuly";
+                }
+                else
+                {
+                    repository.Add(payMode);
+                    view.Message = "Prroduct added successfuly";
+                }
+                view.IsSuccessful = true;
+                loadAllProductList();
+                CleanViewFields();
+            }
+            catch (Exception ex)
+            {
+                view.IsSuccessful = false;
+                view.Message = ex.Message;
+            }
+        }
+        private void CleanViewFields()
+        {
+            view.ProductId = "0";
+            view.ProductName = "";
+            view.ProductObservation = "";
         }
 
         private void DelecteSelectedProduct(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var payMode = (PayModeModel)productBindingSource.Current;
+
+                repository.Delete(payMode.Id);
+                view.IsSuccessful = true;
+                view.Message = "Product deleted successfully";
+                loadAllProductList();
+            }
+            catch (Exception ex)
+            {
+                view.IsSuccessful = false;
+                view.Message = "Ah error ocurred, could not delete product";
+            }
         }
 
         private void LoadSelectProductToEdit(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            //Se obtiene el objeto del dtagridview que se encuentra seleccionado
+            var payMode = (ProductModel)productBindingSource.Current;
+            //Se cambia el contenido de las cajas de texto por el objeto recuperado 
+            // del datagrudview
+            view.ProductId = payMode.Id.ToString();
+            view.ProductName = payMode.Name;
+            view.ProductObservation = payMode.Observation;
+
+            //Se establece el modo como edicion
+            view.IsEdit = true;
         }
 
         private void AddNewProduct(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            view.IsEdit = false;
         }
 
         private void SearchProduct(object? sender, EventArgs e)
