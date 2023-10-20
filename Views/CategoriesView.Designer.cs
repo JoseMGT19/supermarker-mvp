@@ -38,7 +38,7 @@
             BtnDelete = new Button();
             BtnEdit = new Button();
             BtnNew = new Button();
-            dataGridView1 = new DataGridView();
+            DgCategories = new DataGridView();
             BtnSearchP = new Button();
             TxtSearchs = new TextBox();
             lbSearch = new Label();
@@ -55,7 +55,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tabControl1.SuspendLayout();
             tabCategoriesList.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DgCategories).BeginInit();
             tabCategoriesDetail.SuspendLayout();
             SuspendLayout();
             // 
@@ -106,7 +106,7 @@
             tabCategoriesList.Controls.Add(BtnDelete);
             tabCategoriesList.Controls.Add(BtnEdit);
             tabCategoriesList.Controls.Add(BtnNew);
-            tabCategoriesList.Controls.Add(dataGridView1);
+            tabCategoriesList.Controls.Add(DgCategories);
             tabCategoriesList.Controls.Add(BtnSearchP);
             tabCategoriesList.Controls.Add(TxtSearchs);
             tabCategoriesList.Controls.Add(lbSearch);
@@ -120,6 +120,7 @@
             // 
             // BtnClose
             // 
+            BtnClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnClose.Image = Properties.Resources.cerrar;
             BtnClose.Location = new Point(615, 264);
             BtnClose.Name = "BtnClose";
@@ -129,6 +130,7 @@
             // 
             // BtnDelete
             // 
+            BtnDelete.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnDelete.Image = Properties.Resources.delete;
             BtnDelete.Location = new Point(615, 200);
             BtnDelete.Name = "BtnDelete";
@@ -138,6 +140,7 @@
             // 
             // BtnEdit
             // 
+            BtnEdit.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnEdit.Image = Properties.Resources.edit;
             BtnEdit.Location = new Point(615, 136);
             BtnEdit.Name = "BtnEdit";
@@ -147,6 +150,7 @@
             // 
             // BtnNew
             // 
+            BtnNew.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnNew.BackColor = Color.Transparent;
             BtnNew.Image = Properties.Resources._new;
             BtnNew.Location = new Point(615, 70);
@@ -155,17 +159,22 @@
             BtnNew.TabIndex = 20;
             BtnNew.UseVisualStyleBackColor = false;
             // 
-            // dataGridView1
+            // DgCategories
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(15, 70);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(594, 241);
-            dataGridView1.TabIndex = 16;
+            DgCategories.AllowUserToAddRows = false;
+            DgCategories.AllowUserToDeleteRows = false;
+            DgCategories.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            DgCategories.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DgCategories.Location = new Point(15, 70);
+            DgCategories.Name = "DgCategories";
+            DgCategories.ReadOnly = true;
+            DgCategories.RowTemplate.Height = 25;
+            DgCategories.Size = new Size(594, 241);
+            DgCategories.TabIndex = 16;
             // 
             // BtnSearchP
             // 
+            BtnSearchP.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnSearchP.BackgroundImageLayout = ImageLayout.Zoom;
             BtnSearchP.Image = Properties.Resources.search_small;
             BtnSearchP.Location = new Point(559, 18);
@@ -176,6 +185,7 @@
             // 
             // TxtSearchs
             // 
+            TxtSearchs.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             TxtSearchs.Location = new Point(15, 32);
             TxtSearchs.Name = "TxtSearchs";
             TxtSearchs.PlaceholderText = "Data to search";
@@ -299,7 +309,7 @@
             tabControl1.ResumeLayout(false);
             tabCategoriesList.ResumeLayout(false);
             tabCategoriesList.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DgCategories).EndInit();
             tabCategoriesDetail.ResumeLayout(false);
             tabCategoriesDetail.PerformLayout();
             ResumeLayout(false);
@@ -316,7 +326,7 @@
         private Button BtnDelete;
         private Button BtnEdit;
         private Button BtnNew;
-        private DataGridView dataGridView1;
+        private DataGridView DgCategories;
         private Button BtnSearchP;
         private TextBox TxtSearchs;
         private Label lbSearch;
