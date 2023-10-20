@@ -37,9 +37,9 @@
             BtnDelete = new Button();
             BtnEdit = new Button();
             BtnNew = new Button();
-            dataGridView1 = new DataGridView();
+            DgProvider = new DataGridView();
             BtnSearchP = new Button();
-            TxtSearchs = new TextBox();
+            TxtSearch = new TextBox();
             lbSearch = new Label();
             tabProviderDetail = new TabPage();
             BtnCancel = new Button();
@@ -54,7 +54,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tabControl1.SuspendLayout();
             tabProvidersList.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DgProvider).BeginInit();
             tabProviderDetail.SuspendLayout();
             SuspendLayout();
             // 
@@ -105,9 +105,9 @@
             tabProvidersList.Controls.Add(BtnDelete);
             tabProvidersList.Controls.Add(BtnEdit);
             tabProvidersList.Controls.Add(BtnNew);
-            tabProvidersList.Controls.Add(dataGridView1);
+            tabProvidersList.Controls.Add(DgProvider);
             tabProvidersList.Controls.Add(BtnSearchP);
-            tabProvidersList.Controls.Add(TxtSearchs);
+            tabProvidersList.Controls.Add(TxtSearch);
             tabProvidersList.Controls.Add(lbSearch);
             tabProvidersList.Location = new Point(4, 24);
             tabProvidersList.Name = "tabProvidersList";
@@ -154,14 +154,14 @@
             BtnNew.TabIndex = 12;
             BtnNew.UseVisualStyleBackColor = false;
             // 
-            // dataGridView1
+            // DgProvider
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(15, 70);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(594, 241);
-            dataGridView1.TabIndex = 8;
+            DgProvider.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DgProvider.Location = new Point(15, 70);
+            DgProvider.Name = "DgProvider";
+            DgProvider.RowTemplate.Height = 25;
+            DgProvider.Size = new Size(594, 241);
+            DgProvider.TabIndex = 8;
             // 
             // BtnSearchP
             // 
@@ -173,13 +173,13 @@
             BtnSearchP.TabIndex = 7;
             BtnSearchP.UseVisualStyleBackColor = true;
             // 
-            // TxtSearchs
+            // TxtSearch
             // 
-            TxtSearchs.Location = new Point(15, 32);
-            TxtSearchs.Name = "TxtSearchs";
-            TxtSearchs.PlaceholderText = "Data to search";
-            TxtSearchs.Size = new Size(538, 23);
-            TxtSearchs.TabIndex = 6;
+            TxtSearch.Location = new Point(15, 32);
+            TxtSearch.Name = "TxtSearch";
+            TxtSearch.PlaceholderText = "Data to search";
+            TxtSearch.Size = new Size(538, 23);
+            TxtSearch.TabIndex = 6;
             // 
             // lbSearch
             // 
@@ -298,7 +298,7 @@
             tabControl1.ResumeLayout(false);
             tabProvidersList.ResumeLayout(false);
             tabProvidersList.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DgProvider).EndInit();
             tabProviderDetail.ResumeLayout(false);
             tabProviderDetail.PerformLayout();
             ResumeLayout(false);
@@ -315,9 +315,9 @@
         private Button BtnDelete;
         private Button BtnEdit;
         private Button BtnNew;
-        private DataGridView dataGridView1;
+        private DataGridView DgProvider;
         private Button BtnSearchP;
-        private TextBox TxtSearchs;
+        private TextBox TxtSearch;
         private Label lbSearch;
         private TabPage tabProviderDetail;
         private Button BtnCancel;
