@@ -18,6 +18,20 @@ namespace Supermarket_mvp.Views
         public CategoriesView()
         {
             InitializeComponent();
+            AssociateAndRaiseViewEvents();
+        }
+
+        private void AssociateAndRaiseViewEvents()
+        {
+            BtnSearchP.Click += delegate { SearchEvent?.Invoke(this, EventArgs.Empty); };
+
+            TxtSearchs.KeyDown += (s, e) =>
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    SearchEvent?.Invoke(this, EventArgs.Empty);
+                }
+            };
         }
 
         public string CategorieId {

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Trabajos CECEP\\Supermarket-mvp\\Supermarket-mvp\\Supermarket-mvp.csproj": {}
+    "D:\\git\\supermarker-mvp\\Supermarket-mvp.csproj": {}
   },
   "projects": {
-    "D:\\Trabajos CECEP\\Supermarket-mvp\\Supermarket-mvp\\Supermarket-mvp.csproj": {
+    "D:\\git\\supermarker-mvp\\Supermarket-mvp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Trabajos CECEP\\Supermarket-mvp\\Supermarket-mvp\\Supermarket-mvp.csproj",
+        "projectUniqueName": "D:\\git\\supermarker-mvp\\Supermarket-mvp.csproj",
         "projectName": "Supermarket-mvp",
-        "projectPath": "D:\\Trabajos CECEP\\Supermarket-mvp\\Supermarket-mvp\\Supermarket-mvp.csproj",
-        "packagesPath": "C:\\Users\\desarrollador5\\.nuget\\packages\\",
-        "outputPath": "D:\\Trabajos CECEP\\Supermarket-mvp\\Supermarket-mvp\\obj\\",
+        "projectPath": "D:\\git\\supermarker-mvp\\Supermarket-mvp.csproj",
+        "packagesPath": "C:\\Users\\pc8\\.nuget\\packages\\",
+        "outputPath": "D:\\git\\supermarker-mvp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\desarrollador5\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\pc8\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -43,6 +43,10 @@
             "Microsoft.Data.SqlClient": {
               "target": "Package",
               "version": "[5.1.1, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.5, )"
             }
           },
           "imports": [

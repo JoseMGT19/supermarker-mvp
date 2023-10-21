@@ -46,3 +46,18 @@ D:\Trabajos CECEP\Supermarket-mvp\Supermarket-mvp\obj\Debug\net6.0-windows\Super
 D:\Trabajos CECEP\Supermarket-mvp\Supermarket-mvp\obj\Debug\net6.0-windows\Supermarket_mvp.Views.CategoriesView.resources
 D:\Trabajos CECEP\Supermarket-mvp\Supermarket-mvp\obj\Debug\net6.0-windows\Supermarket_mvp.Views.ProductView.resources
 D:\Trabajos CECEP\Supermarket-mvp\Supermarket-mvp\obj\Debug\net6.0-windows\Supermarket_mvp.Views.ProvidersView.resources
+D:\git\supermarker-mvp\obj\Debug\net6.0-windows\Supermarket-mvp.csproj.AssemblyReference.cache
+D:\git\supermarker-mvp\obj\Debug\net6.0-windows\Supermarket_mvp.Views.CategoriesView.resources
+D:\git\supermarker-mvp\obj\Debug\net6.0-windows\Supermarket_mvp.Views.MainView.resources
+D:\git\supermarker-mvp\obj\Debug\net6.0-windows\Supermarket_mvp.Views.PayModeView.resources
+D:\git\supermarker-mvp\obj\Debug\net6.0-windows\Supermarket_mvp.Views.ProductView.resources
+D:\git\supermarker-mvp\obj\Debug\net6.0-windows\Supermarket_mvp.Views.ProvidersView.resources
+D:\git\supermarker-mvp\obj\Debug\net6.0-windows\Supermarket_mvp.Properties.Resources.resources
+D:\git\supermarker-mvp\obj\Debug\net6.0-windows\Supermarket-mvp.csproj.GenerateResource.cache
+D:\git\supermarker-mvp\obj\Debug\net6.0-windows\Supermarket-mvp.GeneratedMSBuildEditorConfig.editorconfig
+D:\git\supermarker-mvp\obj\Debug\net6.0-windows\Supermarket-mvp.AssemblyInfoInputs.cache
+D:\git\supermarker-mvp\obj\Debug\net6.0-windows\Supermarket-mvp.AssemblyInfo.cs
+D:\git\supermarker-mvp\obj\Debug\net6.0-windows\Supermarket-mvp.csproj.CoreCompileInputs.cache
+D:\git\supermarker-mvp\obj\Debug\net6.0-windows\Supermarket-mvp.dll
+D:\git\supermarker-mvp\obj\Debug\net6.0-windows\refint\Supermarket-mvp.dll
+D:\git\supermarker-mvp\obj\Debug\net6.0-windows\Supermarket-mvp.pdb
