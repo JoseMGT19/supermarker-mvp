@@ -10,7 +10,7 @@ namespace Supermarket_mvp.Views
     {
         event EventHandler ShowPayModeView;
         event EventHandler showProductView;
-        event EventHandler showCustomerView;
+        
         event EventHandler showProvidersView;
         event EventHandler ShowCategoriesView;
 

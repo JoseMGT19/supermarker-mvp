@@ -21,6 +21,8 @@ namespace Supermarket_mvp.Views
             AssociateAndRaiseViewEvents();
 
             tabControl1.TabPages.Remove(tabCategoriesDetail);
+
+            BtnClose.Click += delegate { this.Close(); };
         }
 
         private void AssociateAndRaiseViewEvents()
@@ -78,6 +80,29 @@ namespace Supermarket_mvp.Views
         public void SetCategorieListBildingSource(BindingSource categorieList)
         {
             DgCategories.DataSource = categorieList;
+        }
+
+        private static CategoriesView instance;
+
+        public static CategoriesView GetInstance(Form parentContainer)
+        {
+            if(instance == null || instance.IsDisposed)
+            {
+                instance = new CategoriesView();
+                instance.MdiParent = parentContainer;
+
+                instance.FormBorderStyle = FormBorderStyle.None;
+                instance.Dock = DockStyle.Fill;
+            } 
+            else
+            {
+                if(instance.WindowState == FormWindowState.Minimized)
+                {
+                    instance.WindowState = FormWindowState.Normal;
+                }
+                instance.BringToFront();
+            }
+            return instance;
         }
     }
 }
