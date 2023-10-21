@@ -19,6 +19,8 @@ namespace Supermarket_mvp.Views
         {
             InitializeComponent();
             AssociateAndRaiseViewEvents();
+
+            tabControl1.TabPages.Remove(tabCategoriesDetail);
         }
 
         private void AssociateAndRaiseViewEvents()
