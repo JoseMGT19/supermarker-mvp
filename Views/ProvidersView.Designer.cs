@@ -39,7 +39,7 @@
             BtnNew = new Button();
             DgProvider = new DataGridView();
             BtnSearchP = new Button();
-            TxtSearch = new TextBox();
+            TxtSearchs = new TextBox();
             lbSearch = new Label();
             tabProviderDetail = new TabPage();
             BtnCancel = new Button();
@@ -90,7 +90,7 @@
             // 
             // tabControl1
             // 
-            tabControl1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            tabControl1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tabControl1.Controls.Add(tabProvidersList);
             tabControl1.Controls.Add(tabProviderDetail);
             tabControl1.Location = new Point(0, 100);
@@ -107,7 +107,7 @@
             tabProvidersList.Controls.Add(BtnNew);
             tabProvidersList.Controls.Add(DgProvider);
             tabProvidersList.Controls.Add(BtnSearchP);
-            tabProvidersList.Controls.Add(TxtSearch);
+            tabProvidersList.Controls.Add(TxtSearchs);
             tabProvidersList.Controls.Add(lbSearch);
             tabProvidersList.Location = new Point(4, 24);
             tabProvidersList.Name = "tabProvidersList";
@@ -160,10 +160,14 @@
             // 
             // DgProvider
             // 
+            DgProvider.AllowUserToAddRows = false;
+            DgProvider.AllowUserToDeleteRows = false;
             DgProvider.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            DgProvider.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DgProvider.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DgProvider.Location = new Point(15, 70);
             DgProvider.Name = "DgProvider";
+            DgProvider.ReadOnly = true;
             DgProvider.RowTemplate.Height = 25;
             DgProvider.Size = new Size(594, 241);
             DgProvider.TabIndex = 8;
@@ -179,14 +183,14 @@
             BtnSearchP.TabIndex = 7;
             BtnSearchP.UseVisualStyleBackColor = true;
             // 
-            // TxtSearch
+            // TxtSearchs
             // 
-            TxtSearch.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            TxtSearch.Location = new Point(15, 32);
-            TxtSearch.Name = "TxtSearch";
-            TxtSearch.PlaceholderText = "Data to search";
-            TxtSearch.Size = new Size(538, 23);
-            TxtSearch.TabIndex = 6;
+            TxtSearchs.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            TxtSearchs.Location = new Point(15, 32);
+            TxtSearchs.Name = "TxtSearchs";
+            TxtSearchs.PlaceholderText = "Data to search";
+            TxtSearchs.Size = new Size(538, 23);
+            TxtSearchs.TabIndex = 6;
             // 
             // lbSearch
             // 
@@ -324,7 +328,7 @@
         private Button BtnNew;
         private DataGridView DgProvider;
         private Button BtnSearchP;
-        private TextBox TxtSearch;
+        private TextBox TxtSearchs;
         private Label lbSearch;
         private TabPage tabProviderDetail;
         private Button BtnCancel;

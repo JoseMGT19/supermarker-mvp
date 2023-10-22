@@ -9,6 +9,7 @@
       "Supermarket-mvp/1.0.0": {
         "dependencies": {
           "Microsoft.Data.SqlClient": "5.1.1",
+          "Microsoft.SqlServer.Server": "1.0.0",
           "System.Data.SqlClient": "4.8.5"
         },
         "runtime": {

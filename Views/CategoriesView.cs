@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Supermarket_mvp.Views
 {
-    public partial class CategoriesView : Form , ICategorieView
+    public partial class CategoriesView : Form, ICategorieView
     {
         private bool isEdit;
         private bool isSuccessful;
@@ -37,28 +37,35 @@ namespace Supermarket_mvp.Views
                 }
             };
 
-            BtnNew.Click += delegate { AddNewEvent?.Invoke(this, EventArgs.Empty);
+            BtnNew.Click += delegate
+            {
+                AddNewEvent?.Invoke(this, EventArgs.Empty);
                 tabControl1.TabPages.Remove(tabCategoriesList);
                 tabControl1.TabPages.Add(tabCategoriesDetail);
                 tabCategoriesDetail.Text = "Add New Categories";
             };
 
-            BtnEdit.Click += delegate { EditEvent?.Invoke(this, EventArgs.Empty);
+            BtnEdit.Click += delegate
+            {
+                EditEvent?.Invoke(this, EventArgs.Empty);
                 tabControl1.TabPages.Remove(tabCategoriesList);
                 tabControl1.TabPages.Add(tabCategoriesDetail);
                 tabCategoriesDetail.Text = "Edit Categories";
             };
-            BtnDelete.Click += delegate { 
+            BtnDelete.Click += delegate
+            {
                 var result = MessageBox.Show("Are you sure you want to delete the selected Categories",
                     "Warning",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning); 
-                if(result == DialogResult.Yes)
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
                 {
                     DeleteEvent?.Invoke(this, EventArgs.Empty);
                     MessageBox.Show(Message);
                 }
             };
-            BtnSave.Click += delegate { SaveEvent?.Invoke(this, EventArgs.Empty);
+            BtnSave.Click += delegate
+            {
+                SaveEvent?.Invoke(this, EventArgs.Empty);
                 if (isSuccessful)
                 {
                     tabControl1.TabPages.Remove(tabCategoriesList);
@@ -66,26 +73,32 @@ namespace Supermarket_mvp.Views
                 }
                 MessageBox.Show(Message);
             };
-            BtnCancel.Click += delegate { CancelEvent?.Invoke(this, EventArgs.Empty);
+            BtnCancel.Click += delegate
+            {
+                CancelEvent?.Invoke(this, EventArgs.Empty);
                 tabControl1.TabPages.Remove(tabCategoriesList);
                 tabControl1.TabPages.Add(tabCategoriesDetail);
             };
 
         }
 
-        public string CategorieId {
-            get {return TxtCategoriesId.Text; }
-            set { TxtCategoriesId.Text = value;}
+        public string CategorieId
+        {
+            get { return TxtCategoriesId.Text; }
+            set { TxtCategoriesId.Text = value; }
         }
-        public string CategorieName {
-        get {return TxtCategoriesName.Text;}
-        set { TxtCategoriesName.Text = value;}
+        public string CategorieName
+        {
+            get { return TxtCategoriesName.Text; }
+            set { TxtCategoriesName.Text = value; }
         }
-        public string CategorieObservation {
-            get { return TxtCategoriesObservation.Text;}
-            set { TxtCategoriesObservation.Text = value;}
+        public string CategorieObservation
+        {
+            get { return TxtCategoriesObservation.Text; }
+            set { TxtCategoriesObservation.Text = value; }
         }
-        public string SearchValue {
+        public string SearchValue
+        {
             get { return TxtSearchs.Text; }
             set { TxtSearchs.Text = value; }
         }
@@ -121,17 +134,17 @@ namespace Supermarket_mvp.Views
 
         public static CategoriesView GetInstance(Form parentContainer)
         {
-            if(instance == null || instance.IsDisposed)
+            if (instance == null || instance.IsDisposed)
             {
                 instance = new CategoriesView();
                 instance.MdiParent = parentContainer;
 
                 instance.FormBorderStyle = FormBorderStyle.None;
                 instance.Dock = DockStyle.Fill;
-            } 
+            }
             else
             {
-                if(instance.WindowState == FormWindowState.Minimized)
+                if (instance.WindowState == FormWindowState.Minimized)
                 {
                     instance.WindowState = FormWindowState.Normal;
                 }
