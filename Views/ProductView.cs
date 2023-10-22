@@ -164,15 +164,11 @@ namespace Supermarket_mvp.Views
             return instance;
         }
 
-        public void SetPayModeListBildingSource(BindingSource payModeList)
-        {
-            DgProduct.DataSource = tabProductsList;
-
-        }
+        
 
         public void SetProductListBildingSource(BindingSource productList)
         {
-            throw new NotImplementedException();
+            DgProduct.DataSource = productList;
         }
     }
 
